@@ -1,0 +1,1399 @@
+[
+  {
+    "name": "ast_structure",
+    "domain": "code",
+    "description": "Return the complete Python AST as a structural string without source locations; never execute it.",
+    "parameters": [
+      {
+        "name": "source",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "source": "x = 1"
+    },
+    "example_output": "Module(body=[Assign(targets=[Name(id='x', ctx=Store())], value=Constant(value=1))], type_ignores=[])",
+    "invokes_llm": false
+  },
+  {
+    "name": "binomial_coefficient",
+    "domain": "math",
+    "description": "Compute exact n-choose-k for nonnegative integers, returning zero when k>n.",
+    "parameters": [
+      {
+        "name": "n",
+        "required": true
+      },
+      {
+        "name": "k",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "n": 5,
+      "k": 2
+    },
+    "example_output": 10,
+    "invokes_llm": false
+  },
+  {
+    "name": "canonical_json",
+    "domain": "code",
+    "description": "Parse JSON and serialize with sorted keys, UTF-8 characters, and compact separators; rejects NaN/Infinity.",
+    "parameters": [
+      {
+        "name": "text",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "text": "{\"b\": 1, \"a\": 2}"
+    },
+    "example_output": "{\"a\":2,\"b\":1}",
+    "invokes_llm": false
+  },
+  {
+    "name": "chinese_remainder",
+    "domain": "math",
+    "description": "Solve simultaneous congruences with pairwise coprime moduli>1; return least nonnegative solution.",
+    "parameters": [
+      {
+        "name": "remainders",
+        "required": true
+      },
+      {
+        "name": "moduli",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "remainders": [
+        2,
+        3
+      ],
+      "moduli": [
+        3,
+        5
+      ]
+    },
+    "example_output": {
+      "remainder": 8,
+      "modulus": 15
+    },
+    "invokes_llm": false
+  },
+  {
+    "name": "compare_json",
+    "domain": "code",
+    "description": "Recursively compare JSON values; distinguish types and return changed, added or removed paths.",
+    "parameters": [
+      {
+        "name": "left",
+        "required": true
+      },
+      {
+        "name": "right",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "left": {
+        "x": 1
+      },
+      "right": {
+        "x": 2
+      }
+    },
+    "example_output": [
+      {
+        "path": [
+          "x"
+        ],
+        "kind": "changed",
+        "left": 1,
+        "right": 2
+      }
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "compile_check",
+    "domain": "code",
+    "description": "Compile Python without executing it; catches syntax and context errors such as return outside function.",
+    "parameters": [
+      {
+        "name": "source",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "source": "return 1"
+    },
+    "example_output": {
+      "valid": false,
+      "line": 1,
+      "message": "'return' outside function"
+    },
+    "invokes_llm": false
+  },
+  {
+    "name": "enumerate_combinations",
+    "domain": "math",
+    "description": "Enumerate positional k-combinations in input order; no deduplication or silent truncation.",
+    "parameters": [
+      {
+        "name": "items",
+        "required": true
+      },
+      {
+        "name": "k",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "items": [
+        1,
+        2,
+        3
+      ],
+      "k": 2
+    },
+    "example_output": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "enumerate_permutations",
+    "domain": "math",
+    "description": "Enumerate positional length-k permutations; duplicate input values can produce duplicate outputs.",
+    "parameters": [
+      {
+        "name": "items",
+        "required": true
+      },
+      {
+        "name": "k",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "items": [
+        1,
+        2
+      ],
+      "k": 2
+    },
+    "example_output": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "euclidean_distance",
+    "domain": "life",
+    "description": "Compute straight-line Euclidean distance between equal-dimensional coordinate lists.",
+    "parameters": [
+      {
+        "name": "a",
+        "required": true
+      },
+      {
+        "name": "b",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "a": [
+        1,
+        2
+      ],
+      "b": [
+        4,
+        6
+      ]
+    },
+    "example_output": 5.0,
+    "invokes_llm": false
+  },
+  {
+    "name": "extended_gcd",
+    "domain": "math",
+    "description": "Return integers gcd,x,y satisfying a*x+b*y=gcd>=0 (Bezout coefficients).",
+    "parameters": [
+      {
+        "name": "a",
+        "required": true
+      },
+      {
+        "name": "b",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "a": 30,
+      "b": 18
+    },
+    "example_output": {
+      "gcd": 6,
+      "x": -1,
+      "y": 2
+    },
+    "invokes_llm": false
+  },
+  {
+    "name": "extract_lines",
+    "domain": "code",
+    "description": "Extract an inclusive one-based line range, preserving line endings; reject out-of-range requests.",
+    "parameters": [
+      {
+        "name": "source",
+        "required": true
+      },
+      {
+        "name": "start_line",
+        "required": true
+      },
+      {
+        "name": "end_line",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "source": "a\nb\nc\n",
+      "start_line": 2,
+      "end_line": 3
+    },
+    "example_output": "b\nc\n",
+    "invokes_llm": false
+  },
+  {
+    "name": "filter_places",
+    "domain": "life",
+    "description": "Return place IDs whose explicit attributes equal every supplied constraint; missing fields do not match.",
+    "parameters": [
+      {
+        "name": "places",
+        "required": true
+      },
+      {
+        "name": "constraints",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "places": [
+        {
+          "id": "p1",
+          "kind": "cafe"
+        },
+        {
+          "id": "p2",
+          "kind": "park"
+        }
+      ],
+      "constraints": {
+        "kind": "cafe"
+      }
+    },
+    "example_output": [
+      "p1"
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "find_calls",
+    "domain": "code",
+    "description": "List syntactic call expressions and line numbers; does not prove which calls execute at runtime.",
+    "parameters": [
+      {
+        "name": "source",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "source": "print(len(x))"
+    },
+    "example_output": [
+      {
+        "callee": "print",
+        "line": 1
+      },
+      {
+        "callee": "len",
+        "line": 1
+      }
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "find_definitions",
+    "domain": "code",
+    "description": "List class, function and async-function definitions, including nested definitions and line ranges.",
+    "parameters": [
+      {
+        "name": "source",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "source": "def f(x):\n    return x\n"
+    },
+    "example_output": [
+      {
+        "name": "f",
+        "kind": "FunctionDef",
+        "line": 1,
+        "end_line": 2
+      }
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "find_imports",
+    "domain": "code",
+    "description": "List import statements syntactically without loading the referenced modules.",
+    "parameters": [
+      {
+        "name": "source",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "source": "import math\nfrom os import path"
+    },
+    "example_output": [
+      "import math",
+      "from os import path"
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "follow_relative_directions",
+    "domain": "life",
+    "description": "Follow left/right/back turns and nonnegative forward distances; Cartesian x=east,y=north, headings N/E/S/W.",
+    "parameters": [
+      {
+        "name": "position",
+        "required": true
+      },
+      {
+        "name": "heading",
+        "required": true
+      },
+      {
+        "name": "instructions",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "position": [
+        0,
+        0
+      ],
+      "heading": "N",
+      "instructions": [
+        {
+          "turn": "right"
+        },
+        {
+          "forward": 3
+        }
+      ]
+    },
+    "example_output": {
+      "position": [
+        3,
+        0
+      ],
+      "heading": "E"
+    },
+    "invokes_llm": false
+  },
+  {
+    "name": "grid_shortest_path",
+    "domain": "life",
+    "description": "Find four-neighbor shortest path on a rectangular grid; 0=free, 1=blocked; positions [row,column].",
+    "parameters": [
+      {
+        "name": "grid",
+        "required": true
+      },
+      {
+        "name": "start",
+        "required": true
+      },
+      {
+        "name": "goal",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "grid": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "start": [
+        0,
+        0
+      ],
+      "goal": [
+        1,
+        1
+      ]
+    },
+    "example_output": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "haversine_km",
+    "domain": "life",
+    "description": "Approximate spherical distance in km for [latitude,longitude] degrees, radius=6371.0088 km; not route distance.",
+    "parameters": [
+      {
+        "name": "a",
+        "required": true
+      },
+      {
+        "name": "b",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0
+      ]
+    },
+    "example_output": 0.0,
+    "invokes_llm": false
+  },
+  {
+    "name": "integer_gcd",
+    "domain": "math",
+    "description": "Return the nonnegative greatest common divisor of a nonempty integer list.",
+    "parameters": [
+      {
+        "name": "numbers",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "numbers": [
+        18,
+        24
+      ]
+    },
+    "example_output": 6,
+    "invokes_llm": false
+  },
+  {
+    "name": "integer_lcm",
+    "domain": "math",
+    "description": "Return the nonnegative least common multiple of a nonempty integer list.",
+    "parameters": [
+      {
+        "name": "numbers",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "numbers": [
+        6,
+        8
+      ]
+    },
+    "example_output": 24,
+    "invokes_llm": false
+  },
+  {
+    "name": "integer_square_root",
+    "domain": "math",
+    "description": "Compute exact floor square root and square status for a nonnegative integer.",
+    "parameters": [
+      {
+        "name": "n",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "n": 17
+    },
+    "example_output": {
+      "floor_root": 4,
+      "is_square": false
+    },
+    "invokes_llm": false
+  },
+  {
+    "name": "intersect_candidates",
+    "domain": "life",
+    "description": "Intersect nonempty lists of candidate string IDs; return sorted unique IDs.",
+    "parameters": [
+      {
+        "name": "candidate_lists",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "candidate_lists": [
+        [
+          "a",
+          "b"
+        ],
+        [
+          "b",
+          "c"
+        ]
+      ]
+    },
+    "example_output": [
+      "b"
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "intersect_time_windows",
+    "domain": "life",
+    "description": "Intersect closed time intervals in the caller's common numeric time unit; touching endpoints count, disjoint returns null.",
+    "parameters": [
+      {
+        "name": "intervals",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "intervals": [
+        [
+          1,
+          5
+        ],
+        [
+          3,
+          8
+        ]
+      ]
+    },
+    "example_output": [
+      3,
+      5
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "is_prime",
+    "domain": "math",
+    "description": "Test integer primality exactly using trial division; integers below 2 return false.",
+    "parameters": [
+      {
+        "name": "n",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "n": 97
+    },
+    "example_output": true,
+    "invokes_llm": false
+  },
+  {
+    "name": "list_literals",
+    "domain": "code",
+    "description": "List Python constant literals as repr strings and line numbers, including bytes and complex values.",
+    "parameters": [
+      {
+        "name": "source",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "source": "x = 12"
+    },
+    "example_output": [
+      {
+        "literal": "12",
+        "line": 1
+      }
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "manhattan_distance",
+    "domain": "life",
+    "description": "Compute Manhattan (L1) distance between equal-dimensional coordinate lists.",
+    "parameters": [
+      {
+        "name": "a",
+        "required": true
+      },
+      {
+        "name": "b",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "a": [
+        1,
+        2
+      ],
+      "b": [
+        4,
+        6
+      ]
+    },
+    "example_output": 7,
+    "invokes_llm": false
+  },
+  {
+    "name": "modular_inverse",
+    "domain": "math",
+    "description": "Return modular multiplicative inverse; fail if modulus<=1 or inverse does not exist.",
+    "parameters": [
+      {
+        "name": "a",
+        "required": true
+      },
+      {
+        "name": "modulus",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "a": 3,
+      "modulus": 7
+    },
+    "example_output": 5,
+    "invokes_llm": false
+  },
+  {
+    "name": "modular_power",
+    "domain": "math",
+    "description": "Compute base**exponent modulo a positive modulus; exponent must be nonnegative.",
+    "parameters": [
+      {
+        "name": "base",
+        "required": true
+      },
+      {
+        "name": "exponent",
+        "required": true
+      },
+      {
+        "name": "modulus",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "base": 3,
+      "exponent": 5,
+      "modulus": 7
+    },
+    "example_output": 5,
+    "invokes_llm": false
+  },
+  {
+    "name": "multinomial_coefficient",
+    "domain": "math",
+    "description": "Count arrangements with the supplied nonnegative category counts.",
+    "parameters": [
+      {
+        "name": "counts",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "counts": [
+        2,
+        1,
+        1
+      ]
+    },
+    "example_output": 12,
+    "invokes_llm": false
+  },
+  {
+    "name": "name_usage",
+    "domain": "code",
+    "description": "Count AST Name loads/stores/deletes by spelling; does not resolve lexical scopes or attributes.",
+    "parameters": [
+      {
+        "name": "source",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "source": "y = x + x"
+    },
+    "example_output": {
+      "x": {
+        "load": 2,
+        "store": 0,
+        "delete": 0
+      },
+      "y": {
+        "load": 0,
+        "store": 1,
+        "delete": 0
+      }
+    },
+    "invokes_llm": false
+  },
+  {
+    "name": "nearest_places",
+    "domain": "life",
+    "description": "Rank supplied places by Euclidean distance from origin; break ties by string ID; return up to k places.",
+    "parameters": [
+      {
+        "name": "places",
+        "required": true
+      },
+      {
+        "name": "origin",
+        "required": true
+      },
+      {
+        "name": "k",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "places": [
+        {
+          "id": "b",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "id": "a",
+          "position": [
+            1,
+            0
+          ]
+        }
+      ],
+      "origin": [
+        0,
+        0
+      ],
+      "k": 1
+    },
+    "example_output": [
+      {
+        "id": "a",
+        "distance": 1.0
+      }
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "parse_python",
+    "domain": "code",
+    "description": "Parse Python syntax and return top-level AST node types, or syntax error details.",
+    "parameters": [
+      {
+        "name": "source",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "source": "x = 1\n"
+    },
+    "example_output": {
+      "valid": true,
+      "top_level_nodes": [
+        "Assign"
+      ]
+    },
+    "invokes_llm": false
+  },
+  {
+    "name": "point_in_rectangle",
+    "domain": "life",
+    "description": "Test membership in a closed axis-aligned rectangle [xmin,ymin,xmax,ymax], including the boundary.",
+    "parameters": [
+      {
+        "name": "point",
+        "required": true
+      },
+      {
+        "name": "rectangle",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "point": [
+        2,
+        3
+      ],
+      "rectangle": [
+        0,
+        0,
+        4,
+        5
+      ]
+    },
+    "example_output": true,
+    "invokes_llm": false
+  },
+  {
+    "name": "polynomial_evaluate",
+    "domain": "math",
+    "description": "Evaluate exact rational coefficients in descending power order; return a fraction string.",
+    "parameters": [
+      {
+        "name": "coefficients",
+        "required": true
+      },
+      {
+        "name": "x",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "coefficients": [
+        2,
+        3,
+        4
+      ],
+      "x": 2
+    },
+    "example_output": "18",
+    "invokes_llm": false
+  },
+  {
+    "name": "positive_divisors",
+    "domain": "math",
+    "description": "Return all positive divisors of a positive integer in ascending order.",
+    "parameters": [
+      {
+        "name": "n",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "n": 12
+    },
+    "example_output": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      12
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "prime_factorization",
+    "domain": "math",
+    "description": "Factor a positive integer into [prime, exponent] pairs by exact trial division.",
+    "parameters": [
+      {
+        "name": "n",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "n": 60
+    },
+    "example_output": [
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        5,
+        1
+      ]
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "python_tokens",
+    "domain": "code",
+    "description": "Tokenize Python source, retaining comments but omitting newline, indentation and end-marker tokens.",
+    "parameters": [
+      {
+        "name": "source",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "source": "x=1"
+    },
+    "example_output": [
+      {
+        "type": "NAME",
+        "text": "x",
+        "line": 1,
+        "column": 0
+      },
+      {
+        "type": "OP",
+        "text": "=",
+        "line": 1,
+        "column": 1
+      },
+      {
+        "type": "NUMBER",
+        "text": "1",
+        "line": 1,
+        "column": 2
+      }
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "quadratic_roots",
+    "domain": "math",
+    "description": "Return two approximate complex roots as [real,imaginary] pairs; requires nonzero a.",
+    "parameters": [
+      {
+        "name": "a",
+        "required": true
+      },
+      {
+        "name": "b",
+        "required": true
+      },
+      {
+        "name": "c",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "a": 1,
+      "b": -3,
+      "c": 2
+    },
+    "example_output": [
+      [
+        2.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ]
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "rational_arithmetic",
+    "domain": "math",
+    "description": "Apply add/subtract/multiply/divide to exact fraction strings; return a reduced fraction string.",
+    "parameters": [
+      {
+        "name": "a",
+        "required": true
+      },
+      {
+        "name": "b",
+        "required": true
+      },
+      {
+        "name": "operation",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "a": "1/3",
+      "b": "1/6",
+      "operation": "add"
+    },
+    "example_output": "1/2",
+    "invokes_llm": false
+  },
+  {
+    "name": "reachable_nodes",
+    "domain": "life",
+    "description": "Return nodes reachable by directed edges, including start, in breadth-first discovery order.",
+    "parameters": [
+      {
+        "name": "graph",
+        "required": true
+      },
+      {
+        "name": "start",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "graph": {
+        "A": [
+          "B"
+        ],
+        "B": [
+          "A",
+          "C"
+        ]
+      },
+      "start": "A"
+    },
+    "example_output": [
+      "A",
+      "B",
+      "C"
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "rename_name_nodes",
+    "domain": "code",
+    "description": "Rename matching AST Name nodes only; NOT scope-aware, and does not rename parameters or attributes. Reformats code.",
+    "parameters": [
+      {
+        "name": "source",
+        "required": true
+      },
+      {
+        "name": "old",
+        "required": true
+      },
+      {
+        "name": "new",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "source": "x = x + 1",
+      "old": "x",
+      "new": "y"
+    },
+    "example_output": "y = y + 1",
+    "invokes_llm": false
+  },
+  {
+    "name": "replace_lines",
+    "domain": "code",
+    "description": "Replace an inclusive one-based line range verbatim; caller supplies replacement newlines.",
+    "parameters": [
+      {
+        "name": "source",
+        "required": true
+      },
+      {
+        "name": "start_line",
+        "required": true
+      },
+      {
+        "name": "end_line",
+        "required": true
+      },
+      {
+        "name": "replacement",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "source": "a\nb\nc\n",
+      "start_line": 2,
+      "end_line": 2,
+      "replacement": "B\n"
+    },
+    "example_output": "a\nB\nc\n",
+    "invokes_llm": false
+  },
+  {
+    "name": "replace_number_literals",
+    "domain": "code",
+    "description": "Replace numeric AST constants, excluding booleans; validate count. Negative signs are separate AST nodes. Reformats code.",
+    "parameters": [
+      {
+        "name": "source",
+        "required": true
+      },
+      {
+        "name": "old",
+        "required": true
+      },
+      {
+        "name": "new",
+        "required": true
+      },
+      {
+        "name": "expected_count",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "source": "x = 2 + 2",
+      "old": 2,
+      "new": 3,
+      "expected_count": 2
+    },
+    "example_output": "x = 3 + 3",
+    "invokes_llm": false
+  },
+  {
+    "name": "replace_text_exact",
+    "domain": "code",
+    "description": "Replace all literal occurrences only if their number exactly matches expected_count; fail otherwise.",
+    "parameters": [
+      {
+        "name": "source",
+        "required": true
+      },
+      {
+        "name": "old",
+        "required": true
+      },
+      {
+        "name": "new",
+        "required": true
+      },
+      {
+        "name": "expected_count",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "source": "x+x",
+      "old": "x",
+      "new": "y",
+      "expected_count": 2
+    },
+    "example_output": "y+y",
+    "invokes_llm": false
+  },
+  {
+    "name": "resolve_place_name",
+    "domain": "life",
+    "description": "Resolve exact case-insensitive names/aliases after trimming whitespace. Return all matching IDs; never guess ambiguity.",
+    "parameters": [
+      {
+        "name": "places",
+        "required": true
+      },
+      {
+        "name": "name",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "places": [
+        {
+          "id": "p1",
+          "name": "Central Park",
+          "aliases": [
+            "The Park"
+          ]
+        }
+      ],
+      "name": " the park "
+    },
+    "example_output": [
+      "p1"
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "shortest_unweighted_path",
+    "domain": "life",
+    "description": "Find a shortest directed unweighted path by BFS. Neighbors are node-ID lists; unreachable returns null.",
+    "parameters": [
+      {
+        "name": "graph",
+        "required": true
+      },
+      {
+        "name": "start",
+        "required": true
+      },
+      {
+        "name": "goal",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "graph": {
+        "A": [
+          "B"
+        ],
+        "B": [
+          "C"
+        ]
+      },
+      "start": "A",
+      "goal": "C"
+    },
+    "example_output": [
+      "A",
+      "B",
+      "C"
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "shortest_weighted_path",
+    "domain": "life",
+    "description": "Dijkstra on directed node->{neighbor:nonnegative finite weight} graphs with string IDs; unreachable returns null.",
+    "parameters": [
+      {
+        "name": "graph",
+        "required": true
+      },
+      {
+        "name": "start",
+        "required": true
+      },
+      {
+        "name": "goal",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "graph": {
+        "A": {
+          "B": 2,
+          "C": 5
+        },
+        "B": {
+          "C": 1
+        }
+      },
+      "start": "A",
+      "goal": "C"
+    },
+    "example_output": {
+      "path": [
+        "A",
+        "B",
+        "C"
+      ],
+      "cost": 3
+    },
+    "invokes_llm": false
+  },
+  {
+    "name": "solve_linear_system",
+    "domain": "math",
+    "description": "Solve a square nonsingular system exactly over rational numbers; reject singular systems.",
+    "parameters": [
+      {
+        "name": "matrix",
+        "required": true
+      },
+      {
+        "name": "rhs",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "matrix": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
+      "rhs": [
+        5,
+        1
+      ]
+    },
+    "example_output": [
+      "2",
+      "1"
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "topological_order",
+    "domain": "life",
+    "description": "Topologically sort a directed dependency graph with string IDs; lexical tie-breaking, reject cycles.",
+    "parameters": [
+      {
+        "name": "graph",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "graph": {
+        "A": [
+          "C"
+        ],
+        "B": [
+          "C"
+        ]
+      }
+    },
+    "example_output": [
+      "A",
+      "B",
+      "C"
+    ],
+    "invokes_llm": false
+  },
+  {
+    "name": "unified_diff",
+    "domain": "code",
+    "description": "Produce a unified diff of two in-memory texts using fixed before/after filenames.",
+    "parameters": [
+      {
+        "name": "before",
+        "required": true
+      },
+      {
+        "name": "after",
+        "required": true
+      }
+    ],
+    "example_input": {
+      "before": "a\n",
+      "after": "b\n"
+    },
+    "example_output": "--- before\n+++ after\n@@ -1 +1 @@\n-a\n+b\n",
+    "invokes_llm": false
+  }
+]

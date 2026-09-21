@@ -1,0 +1,94 @@
+{
+  "build_seed": 20260920,
+  "status": "dataset_constructed_math_reference_audit_pending",
+  "source_files": {
+    "aime_1983_2025\\data\\train-00000-of-00001.parquet": "046308535b5fc06b501bd3311c7c5080eaaef00239e7069bb0181b73b88b2d63",
+    "hendrycks_math\\algebra\\test-00000-of-00001.parquet": "0e04a850dac9cfc758eac0c80afd2d0cc65e29ea72f916c8ac1045b12af937f5",
+    "hendrycks_math\\algebra\\train-00000-of-00001.parquet": "73347f5b55869f21ff094361025dbd12d291e971aa4d72142eacee10438e449f",
+    "hendrycks_math\\counting_and_probability\\test-00000-of-00001.parquet": "c324818949c75a6227c0328a8499d58023cbbf6757cfc1736f5ab24cc8d87966",
+    "hendrycks_math\\counting_and_probability\\train-00000-of-00001.parquet": "d37ae017930df41678edee50dcde18c17fb06afaff9eb505c1b95f1002bfcb31",
+    "hendrycks_math\\geometry\\test-00000-of-00001.parquet": "98720f3a8134ad9784fd8951195245264495df03ffc5c9485a9a54ff5ae2431a",
+    "hendrycks_math\\geometry\\train-00000-of-00001.parquet": "9dbf5e5b55499e696e0ba72da9d85d4f0be3acbf7eaa6cb014b0fc78bb63784f",
+    "hendrycks_math\\intermediate_algebra\\test-00000-of-00001.parquet": "e859f72486c951c2017da880541ca729940eaa986b0364eb23e238983df9bfeb",
+    "hendrycks_math\\intermediate_algebra\\train-00000-of-00001.parquet": "0c87f3798ebdfb915b1f9b6fc13c1a8d064c3cb91631ccbe85b83ed5d71150f6",
+    "hendrycks_math\\number_theory\\test-00000-of-00001.parquet": "ba156c9c9fa2040836ba12135fd964e6e67d6bccd8c469ec4a3ad941f8f6fbe9",
+    "hendrycks_math\\number_theory\\train-00000-of-00001.parquet": "81c08649149b39811f2d1d7ddf5dfccf6c4c8044a2e169cfb24db09160c941f4",
+    "hendrycks_math\\prealgebra\\test-00000-of-00001.parquet": "301e5d8ade5c7b5038032532e498bdc9dca799e7f1061a63f2e7d980803240cc",
+    "hendrycks_math\\prealgebra\\train-00000-of-00001.parquet": "765b526fb5c0b8385cb7be2c16bf4f6f28cf71f2bc15c826abfbb5fa7f8616cc",
+    "hendrycks_math\\precalculus\\test-00000-of-00001.parquet": "da37474ba3761ae5727af3844a7ba963a735bd6a14c65e6137593669a4fe3b9c",
+    "hendrycks_math\\precalculus\\train-00000-of-00001.parquet": "28bb1ff95525c8d32521509bef91de76339659f5467a381e6e8deea204538f0e"
+  },
+  "source_revisions": {
+    "aime_1983_2025\\.cache\\huggingface\\download\\data\\train-00000-of-00001.parquet.metadata": "8836c8d579b5b303336c0ce12b91288ee2a8b0cf",
+    "aime_1983_2025\\.cache\\huggingface\\download\\README.md.metadata": "8836c8d579b5b303336c0ce12b91288ee2a8b0cf",
+    "hendrycks_math\\.cache\\huggingface\\download\\algebra\\test-00000-of-00001.parquet.metadata": "21a5633873b6a120296cce3e2df9d5550074f4a3",
+    "hendrycks_math\\.cache\\huggingface\\download\\algebra\\train-00000-of-00001.parquet.metadata": "21a5633873b6a120296cce3e2df9d5550074f4a3",
+    "hendrycks_math\\.cache\\huggingface\\download\\counting_and_probability\\test-00000-of-00001.parquet.metadata": "21a5633873b6a120296cce3e2df9d5550074f4a3",
+    "hendrycks_math\\.cache\\huggingface\\download\\counting_and_probability\\train-00000-of-00001.parquet.metadata": "21a5633873b6a120296cce3e2df9d5550074f4a3",
+    "hendrycks_math\\.cache\\huggingface\\download\\geometry\\test-00000-of-00001.parquet.metadata": "21a5633873b6a120296cce3e2df9d5550074f4a3",
+    "hendrycks_math\\.cache\\huggingface\\download\\geometry\\train-00000-of-00001.parquet.metadata": "21a5633873b6a120296cce3e2df9d5550074f4a3",
+    "hendrycks_math\\.cache\\huggingface\\download\\intermediate_algebra\\test-00000-of-00001.parquet.metadata": "21a5633873b6a120296cce3e2df9d5550074f4a3",
+    "hendrycks_math\\.cache\\huggingface\\download\\intermediate_algebra\\train-00000-of-00001.parquet.metadata": "21a5633873b6a120296cce3e2df9d5550074f4a3",
+    "hendrycks_math\\.cache\\huggingface\\download\\number_theory\\test-00000-of-00001.parquet.metadata": "21a5633873b6a120296cce3e2df9d5550074f4a3",
+    "hendrycks_math\\.cache\\huggingface\\download\\number_theory\\train-00000-of-00001.parquet.metadata": "21a5633873b6a120296cce3e2df9d5550074f4a3",
+    "hendrycks_math\\.cache\\huggingface\\download\\prealgebra\\test-00000-of-00001.parquet.metadata": "21a5633873b6a120296cce3e2df9d5550074f4a3",
+    "hendrycks_math\\.cache\\huggingface\\download\\prealgebra\\train-00000-of-00001.parquet.metadata": "21a5633873b6a120296cce3e2df9d5550074f4a3",
+    "hendrycks_math\\.cache\\huggingface\\download\\precalculus\\test-00000-of-00001.parquet.metadata": "21a5633873b6a120296cce3e2df9d5550074f4a3",
+    "hendrycks_math\\.cache\\huggingface\\download\\precalculus\\train-00000-of-00001.parquet.metadata": "21a5633873b6a120296cce3e2df9d5550074f4a3",
+    "hendrycks_math\\.cache\\huggingface\\download\\README.md.metadata": "21a5633873b6a120296cce3e2df9d5550074f4a3"
+  },
+  "math": {
+    "source_aime_rows": 1035,
+    "eligible_aime": 983,
+    "train_aime": 883,
+    "test_aime": 100,
+    "train_supplement": 117,
+    "exclusions": {
+      "aime_requires_embedded_figure": 51,
+      "aime_nonunique_or_invalid_reference": 1,
+      "supplement_duplicate_of_selected_math": 23
+    },
+    "supplement_levels": [
+      4,
+      5
+    ],
+    "deduplication": "normalized exact text and 3-token shingle Jaccard>=0.85",
+    "independent_reference_audit_complete": false
+  },
+  "code": {
+    "count": 1100,
+    "source": "synthetic four-stage integer programs with one mutated operation",
+    "split_unit": "ordered operation sequence, not input values",
+    "exclusions": {
+      "mutation_not_detected_by_tests": 1
+    },
+    "reference_programs_checked": 1100,
+    "all_buggy_programs_fail_at_least_one_hidden_test": true,
+    "scope_limit": "compositional integer-program repair; not repository-level real-world bug fixing"
+  },
+  "life": {
+    "count": 1100,
+    "split_unit": "distinct 16-place coordinate scene",
+    "oracle": "deterministic replay of eight road moves",
+    "synthetic": true,
+    "scope_limit": "closed-world grid navigation; shared task grammar, unseen maps"
+  },
+  "validated_counts": {
+    "train/math": 1000,
+    "train/code": 1000,
+    "train/life": 1000,
+    "test/math": 100,
+    "test/code": 100,
+    "test/life": 100
+  },
+  "manifest_hashes": {
+    "code_test.jsonl": "621a466a0165ed363b639bfb8e10121e85b9b9f90691501b9bf3c2bea1fa91fa",
+    "code_train.jsonl": "078d1fe4723ce3b705bd719f0681bf60889db375dd230c5da3490c4273fbfdf0",
+    "life_test.jsonl": "bf0b3a01e611ddd3f8022cbd89485a0468b5e3681a66eca0bccf81901bf677dc",
+    "life_train.jsonl": "ba5ca10bc7ccc8cda42fc75b4e9946a48f991d87310c0da20c908ff15a610933",
+    "math_test.jsonl": "3cfa9c4926066f8ec1a0f0096663a365306f2b3469aa8c4f1697aaa4f177f7e6",
+    "math_train.jsonl": "fac19a2ba346bad8b9702c31e9e79d86d54915e28b90b0b4e1f08e7ee977df8f",
+    "test.jsonl": "014d052917171dfeb593240a5ba2edbcf5577795dc93e1849d86008b816d2267",
+    "train.jsonl": "d22cfd9cffbe709913e454fb5db38eb27ff0035dcd3b5c946cab80de405ce417"
+  }
+}

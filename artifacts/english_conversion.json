@@ -1,0 +1,201 @@
+{
+  "scope": "English conversion of active project text; original sources and scratch references preserved",
+  "unique_translated_tasks": {
+    "code": 1100,
+    "life": 1100
+  },
+  "math_tasks_already_english_and_unchanged": 1100,
+  "preserved": [
+    "task IDs",
+    "row order",
+    "train/test splits",
+    "source metadata",
+    "answers",
+    "hidden tests",
+    "1100 buggy code assets",
+    "core source",
+    "test source",
+    "50 tool implementations and catalog interfaces",
+    "all research parameters except translated hardware wording",
+    "source snapshots and dataset filters"
+  ],
+  "semantic_checks": {
+    "code_specifications_checked_against_existing_examples_and_tests": 1100,
+    "life_descriptions_replayed_against_existing_routes_and_answers": 1100
+  },
+  "manifests": {
+    "code_test.jsonl": {
+      "rows": 100,
+      "translated_descriptions": 100,
+      "before_sha256": "d3677f5baf42ae6a04574c01b9a72d330d815ad634137f69689db52732f7ff43",
+      "after_sha256": "621a466a0165ed363b639bfb8e10121e85b9b9f90691501b9bf3c2bea1fa91fa",
+      "non_description_fields_and_order_unchanged": true
+    },
+    "code_train.jsonl": {
+      "rows": 1000,
+      "translated_descriptions": 1000,
+      "before_sha256": "9eac3fb851d044974ce20abcad0485c3e7548403f1a958807e6a4c92046346e6",
+      "after_sha256": "078d1fe4723ce3b705bd719f0681bf60889db375dd230c5da3490c4273fbfdf0",
+      "non_description_fields_and_order_unchanged": true
+    },
+    "life_test.jsonl": {
+      "rows": 100,
+      "translated_descriptions": 100,
+      "before_sha256": "73472e9659f6d8277e8e01ef70439922bce33c3216b3294d04103471987e31f6",
+      "after_sha256": "bf0b3a01e611ddd3f8022cbd89485a0468b5e3681a66eca0bccf81901bf677dc",
+      "non_description_fields_and_order_unchanged": true
+    },
+    "life_train.jsonl": {
+      "rows": 1000,
+      "translated_descriptions": 1000,
+      "before_sha256": "38f32b410bd285045559ecd3f9abe28c05c67ec74066489696026a98a5a6c0b7",
+      "after_sha256": "ba5ca10bc7ccc8cda42fc75b4e9946a48f991d87310c0da20c908ff15a610933",
+      "non_description_fields_and_order_unchanged": true
+    },
+    "math_test.jsonl": {
+      "rows": 100,
+      "translated_descriptions": 0,
+      "before_sha256": "3cfa9c4926066f8ec1a0f0096663a365306f2b3469aa8c4f1697aaa4f177f7e6",
+      "after_sha256": "3cfa9c4926066f8ec1a0f0096663a365306f2b3469aa8c4f1697aaa4f177f7e6",
+      "non_description_fields_and_order_unchanged": true
+    },
+    "math_train.jsonl": {
+      "rows": 1000,
+      "translated_descriptions": 0,
+      "before_sha256": "fac19a2ba346bad8b9702c31e9e79d86d54915e28b90b0b4e1f08e7ee977df8f",
+      "after_sha256": "fac19a2ba346bad8b9702c31e9e79d86d54915e28b90b0b4e1f08e7ee977df8f",
+      "non_description_fields_and_order_unchanged": true
+    },
+    "test.jsonl": {
+      "rows": 300,
+      "translated_descriptions": 200,
+      "before_sha256": "a0fe43e42fe7b0b566bbb1bc5b52f3bd804516ca7b61a5c6cbacb7b2b627f18e",
+      "after_sha256": "014d052917171dfeb593240a5ba2edbcf5577795dc93e1849d86008b816d2267",
+      "non_description_fields_and_order_unchanged": true
+    },
+    "train.jsonl": {
+      "rows": 3000,
+      "translated_descriptions": 2000,
+      "before_sha256": "3bed78f44850922c4ecf1b1b1eb6c91b8ce170e5e5eceb864bcb0e1feece15dd",
+      "after_sha256": "d22cfd9cffbe709913e454fb5db38eb27ff0035dcd3b5c946cab80de405ce417",
+      "non_description_fields_and_order_unchanged": true
+    }
+  },
+  "private_verifiers_sha256": "ef9b36c8cacdd4031ec6753faa570e8590c553d6f84c735cfb180b2e4505a990",
+  "known_limitations_unchanged": [
+    "model adapters and sandbox not integrated",
+    "model choices unset",
+    "math references not independently verified",
+    "11 code test tasks have finite-range functional overlap with training programs"
+  ],
+  "real_llm_training_or_evaluation_run": false,
+  "test_suite_after_translation": {
+    "command": "PYTHONPATH=src python -m unittest discover -s tests -q",
+    "tests": 33,
+    "result": "passed"
+  },
+  "language_scan": {
+    "files_scanned": 1149,
+    "han_character_matches": 0,
+    "excludes": [
+      "original third-party source snapshots",
+      "scratch reference material",
+      "git internals",
+      "Python bytecode"
+    ]
+  },
+  "prompt_language_policy": "English descriptions, explanations, code comments, and judging reasons; required JSON keys, interfaces, and answer formats preserved",
+  "documentation_clarifications": "Existing implementation choices and known limitations are distinguished from explicitly confirmed settings; no algorithm or dataset split was changed",
+  "cli_help_checks": {
+    "build_datasets": "English help; exit code 0",
+    "export_tools": "English help; exit code 0",
+    "summarize_trajectories": "English help; exit code 0",
+    "plot_results": "English help; exit code 0",
+    "check_experiment": "English help; exit code 0"
+  },
+  "readiness_check": {
+    "dataset_counts_valid": true,
+    "exit_code": 2,
+    "formal_experiment_ready": false,
+    "reason": "Previously unresolved model and runtime settings remain unset"
+  },
+  "preexisting_files_unchanged": 1127,
+  "changed_file_hashes": {
+    "artifacts/dataset_audit/audit.json": {
+      "before_sha256": "2ca5a953b696e6fb032eb726b76790036acb9547790ad42e855c2ed7a975751c",
+      "after_sha256": "4e547d04243fe15a290870d23f3e6452b163be6f20b087b0c55edaf77cdc74a0"
+    },
+    "artifacts/initial_tools/CATALOG.md": {
+      "before_sha256": "6e07275ddf9e25cff9adfa115148fb9869102464e0af38a6663b203483617ab3",
+      "after_sha256": "11a0c32bed2f85986b9ce6673e307c8ab5141db7b107982b9a591cac0582daa7"
+    },
+    "artifacts/VERIFICATION.md": {
+      "before_sha256": "4e920227bf3eb5808b80c14a9f7edb1325ff4efcedb3edde9f7349552b2dece2",
+      "after_sha256": "1a7d61224995d8e625c29907f3e0231d48828dd14aa8326ed179cfb20863be8a"
+    },
+    "configs/experiment.json": {
+      "before_sha256": "ad50d11c5f6ffc92feaac213f6c96d9a385055d722b8f7b989c4b56671c6e192",
+      "after_sha256": "6f95f2cf8c834132678c727deb6a5340d5ef65ba80fe7a7accf408bd60e76269"
+    },
+    "data/public/code_test.jsonl": {
+      "before_sha256": "d3677f5baf42ae6a04574c01b9a72d330d815ad634137f69689db52732f7ff43",
+      "after_sha256": "621a466a0165ed363b639bfb8e10121e85b9b9f90691501b9bf3c2bea1fa91fa"
+    },
+    "data/public/code_train.jsonl": {
+      "before_sha256": "9eac3fb851d044974ce20abcad0485c3e7548403f1a958807e6a4c92046346e6",
+      "after_sha256": "078d1fe4723ce3b705bd719f0681bf60889db375dd230c5da3490c4273fbfdf0"
+    },
+    "data/public/life_test.jsonl": {
+      "before_sha256": "73472e9659f6d8277e8e01ef70439922bce33c3216b3294d04103471987e31f6",
+      "after_sha256": "bf0b3a01e611ddd3f8022cbd89485a0468b5e3681a66eca0bccf81901bf677dc"
+    },
+    "data/public/life_train.jsonl": {
+      "before_sha256": "38f32b410bd285045559ecd3f9abe28c05c67ec74066489696026a98a5a6c0b7",
+      "after_sha256": "ba5ca10bc7ccc8cda42fc75b4e9946a48f991d87310c0da20c908ff15a610933"
+    },
+    "data/public/test.jsonl": {
+      "before_sha256": "a0fe43e42fe7b0b566bbb1bc5b52f3bd804516ca7b61a5c6cbacb7b2b627f18e",
+      "after_sha256": "014d052917171dfeb593240a5ba2edbcf5577795dc93e1849d86008b816d2267"
+    },
+    "data/public/train.jsonl": {
+      "before_sha256": "3bed78f44850922c4ecf1b1b1eb6c91b8ce170e5e5eceb864bcb0e1feece15dd",
+      "after_sha256": "d22cfd9cffbe709913e454fb5db38eb27ff0035dcd3b5c946cab80de405ce417"
+    },
+    "prompts/controller.txt": {
+      "before_sha256": "0fc588984af5647651449cbb85b3dfd0e6e207a82c444122646b711db718d451",
+      "after_sha256": "ea118a31a9b28475a589705cf03d401be3d005c48e81c2cd4e19e78d6e8b1526"
+    },
+    "prompts/similarity.txt": {
+      "before_sha256": "cba8c8847aad431233c834e81de16b2b69ba205c0bccfe90d174b6b927158e63",
+      "after_sha256": "f943b8469da9b6c029d8a9ba2764e78872e1e5ff482629a0160e55710d98cd7a"
+    },
+    "prompts/solver.txt": {
+      "before_sha256": "584bcfa13d8f9f9a03573bd272cc4773851d93076df6ca8a60e61a075582d0bf",
+      "after_sha256": "ab205ecc5f3d4fc60f9c30549c9e1809e16534587ee4ebbbaa5be9838bd0a9a0"
+    },
+    "README.md": {
+      "before_sha256": "09bcd052bc2253dec8d339e5bc3579d1c74fc65482dd0d589d0b6e987115db25",
+      "after_sha256": "9f370dcf1fc54911d8d3ba0b527fd6f5a449fd479e996e6afc833842d794bad6"
+    },
+    "scripts/build_datasets.py": {
+      "before_sha256": "cd81faf08828ea7d3b1603a17c6b6141f3465890e8b5d67dc32efd052b44b57d",
+      "after_sha256": "b5957cea2007e199e6003972fa506d2e15e62cd828008ec2576da659c170b2ea"
+    },
+    "scripts/check_experiment.py": {
+      "before_sha256": "9b3a54913629f46bf393fe067c4a904092b848f6ae80a392dde3e86d95cf662d",
+      "after_sha256": "d2137f1d4dd2071f1f2575bf7d41ffa815859b55e97a70b015eb038f94981113"
+    },
+    "scripts/export_tools.py": {
+      "before_sha256": "d7e56141db1c9b508120fd3c3a8fa2c0df499778302e18977d24945cff343871",
+      "after_sha256": "1d319ed57ecfd229b74394c5415db8d001384e89dc3d7bf1da2dd1e98c43f684"
+    },
+    "scripts/plot_results.py": {
+      "before_sha256": "6e73a47602bf96329ad015cc5f3d2447034cdfce19402dd786d7ede54cd1f526",
+      "after_sha256": "d0b99ace9472d17d574dc0f7f38071424ba006de788a46dff447b70a25835dd3"
+    },
+    "scripts/summarize_trajectories.py": {
+      "before_sha256": "9e72c0a3006b8b25bef476c8fc31d6e34f2d8a8315dc6b0014e29249b803e425",
+      "after_sha256": "8983cd7857cc3e925fc16a43a4a37bd56c5cf1edc79c7e06f0d219cc87bf8edf"
+    }
+  }
+}

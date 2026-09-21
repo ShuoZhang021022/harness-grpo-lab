@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+outputs/
+data/private/
+models/
+.env
+.env.*
+!.env.example
+tmp/

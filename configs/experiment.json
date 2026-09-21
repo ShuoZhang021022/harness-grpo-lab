@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "main_agent": {
+    "model_id_or_path": null,
+    "revision": null,
+    "output_format": "jsonl_select_create_finish",
+    "trainable_tokens": "all_main_agent_output_tokens",
+    "observes": [
+      "problem_description",
+      "initial_tool_text_descriptions_and_interfaces"
+    ],
+    "runtime_feedback_loop": false,
+    "temperature": null,
+    "max_output_tokens": null,
+    "lora_rank": 32,
+    "lora_alpha": 64,
+    "lora_target_modules": null,
+    "lora_dropout": 0.0
+  },
+  "hardware": {
+    "reported_by_user": "8-core A100 GPU (translated user wording; GPU count and memory remain unconfirmed)",
+    "gpu_count": null,
+    "memory_gb_per_gpu": null,
+    "execution_host": null
+  },
+  "solver": {
+    "model": null,
+    "revision": null,
+    "endpoint_config_path": null,
+    "credentials_environment_variable": null,
+    "temperature": null,
+    "max_output_tokens": null,
+    "business_logic_and_tool_modification_policy": null,
+    "prompt_path": "prompts/solver.txt",
+    "must_use_all_received_tools": true,
+    "noncompliance_additional_penalty": false
+  },
+  "similarity_judge": {
+    "model": null,
+    "revision": null,
+    "endpoint_config_path": null,
+    "credentials_environment_variable": null,
+    "temperature": null,
+    "max_output_tokens": null,
+    "prompt_path": "prompts/similarity.txt",
+    "comparison_set": "initial_50_plus_previously_accepted_in_current_trajectory",
+    "comparison_unit": "single_existing_tool",
+    "high_similarity": "core_input_output_function_substantially_replaceable",
+    "check_immediately_after_each_generated_tool": true,
+    "reject_action": "delete_candidate_and_terminate_trajectory",
+    "rejection_final_reward": -1.0
+  },
+  "tools": {
+    "initial_count": 50,
+    "llm_calls_allowed": false,
+    "persistent_generated_tools": false,
+    "restore_initial_environment_each_trajectory": true,
+    "cost_per_distinct_supplied_tool": 0.01,
+    "accepted_generated_tools_auto_selected": true
+  },
+  "reward": {
+    "correct": 1.0,
+    "incorrect": -1.0,
+    "ordinary": "correctness_minus_0.01_times_distinct_supplied_tool_count",
+    "similarity_rejection_overrides_tool_cost": true,
+    "success_recorded_separately": true,
+    "extra_rewards": []
+  },
+  "training": {
+    "train_tasks_per_domain": 1000,
+    "domains": [
+      "math",
+      "code",
+      "life"
+    ],
+    "questions_per_batch": 100,
+    "samples_per_question": 8,
+    "total_batches": 30,
+    "total_trajectories_per_trained_variant": 24000,
+    "passes_over_train_tasks": 1,
+    "next_batch_uses_updated_policy": true,
+    "loss_normalization": "sequence_mean",
+    "standardize_advantages": true,
+    "std_correction": 0,
+    "advantage_epsilon": 1e-08,
+    "clip_epsilon": 0.2,
+    "kl_beta": 0.0,
+    "updates_per_batch": 1,
+    "task_order": "shuffle_once_and_save",
+    "seed": 20260920,
+    "learning_rate": 1e-05,
+    "optimizer": "AdamW",
+    "optimizer_microbatch_size": 1,
+    "gradient_clipping": false,
+    "weight_decay": 0.0,
+    "entropy_bonus": 0.0,
+    "early_stopping": false,
+    "auto_retry": false
+  },
+  "data": {
+    "train_manifest": "data/public/train.jsonl",
+    "test_manifest": "data/public/test.jsonl",
+    "public_assets_root": "data/public/assets",
+    "private_verifier_config_path": "data/private/labels/verifiers.jsonl",
+    "math_source_policy": "AIME preferred; MATH level 4/5 integer-answer supplements marked separately",
+    "code_source_policy": "synthetic four-operation integer program repair; held-out compositions",
+    "life_source_policy": "synthetic closed-world 16-place maps; held-out scenes",
+    "separate_answers_and_hidden_tests": true,
+    "math_reference_audit": null
+  },
+  "evaluation": {
+    "test_tasks_per_domain": 100,
+    "samples_per_question": 8,
+    "seeds": [
+      20260920
+    ],
+    "checkpoint": "after_batch_30",
+    "variants": [
+      "fixed_tools",
+      "untrained_full",
+      "trained_selection",
+      "trained_full"
+    ],
+    "fixed_baseline_tool_ids": "all_50_initial_tools",
+    "selection_baseline_training": "separate_same_initial_weights_and_24000_rollouts",
+    "independent_attempt_success_rate": true,
+    "oracle_best_of_group_selection": false
+  },
+  "runtime": {
+    "sandbox_adapter": null,
+    "python_environment_image": null,
+    "execution_timeout_seconds": null,
+    "solver_attempts_per_trajectory": null,
+    "infrastructure_error_policy": "persist_unscored_record_and_stop_without_retry",
+    "network_access_inside_tools": false
+  }
+}
