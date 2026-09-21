@@ -26,7 +26,7 @@
     "execution_host": null
   },
   "solver": {
-    "model": "Qwen/Qwen3-32B",
+    "model": "Qwen/Qwen3-8B",
     "revision": null,
     "enable_thinking": null,
     "endpoint_config_path": null,

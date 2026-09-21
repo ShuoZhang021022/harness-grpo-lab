@@ -4,7 +4,7 @@
 
 This project studies whether GRPO with LoRA can improve a main agent's selection and generation of Python tools. A fixed external solver uses the supplied tools to write and execute a Python solution. A fixed external similarity judge checks newly generated tools. Only the main agent is trained.
 
-The repository implements the tool library, trajectory control, GRPO core, datasets, reporting, and plotting. All project prompts are in English and request English natural-language output while preserving required answer formats and program interfaces. The model configuration now selects self-hosted Qwen3-8B for the trainable main agent and Qwen3-32B for the frozen solver, similarity judge, and offline reference auditor. Real model adapters and an isolated execution backend are still missing. No model weights have been downloaded or loaded, and no real LLM training or evaluation has run. Numerical test fixtures and test-rendered charts are not experimental results.
+The repository implements the tool library, trajectory control, GRPO core, datasets, reporting, and plotting. All project prompts are in English and request English natural-language output while preserving required answer formats and program interfaces. The model configuration selects self-hosted Qwen3-8B for the trainable main agent and frozen solver, and Qwen3-32B for the frozen similarity judge and offline reference auditor. Real model adapters and an isolated execution backend are still missing. No model weights have been downloaded or loaded, and no real LLM training or evaluation has run. Numerical test fixtures and test-rendered charts are not experimental results.
 
 ## Confirmed research design
 
@@ -21,13 +21,13 @@ All LLM roles use downloadable Qwen weights on user-provided compute. The model_
 | Role | Model | Parameter updates |
 |---|---|---|
 | Main agent | Qwen/Qwen3-8B | LoRA only |
-| Solver | Qwen/Qwen3-32B | Frozen |
+| Solver | Qwen/Qwen3-8B | Frozen |
 | Similarity judge | Qwen/Qwen3-32B | Frozen |
 | Offline reference-answer auditor | Qwen/Qwen3-32B | Frozen |
 
 The official [Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B) and [Qwen3-32B](https://huggingface.co/Qwen/Qwen3-32B) repositories list the Apache 2.0 license. Self-hosting avoids per-request model-provider API charges; GPU hardware, hosting, and electricity still have costs.
 
-Only two sets of weights are needed. The three frozen roles can share one self-hosted Qwen3-32B service, with separate requests, prompts, and contexts. The offline auditor must not pass reference answers to online agents. Using the same model for several roles does not provide independent evidence that its judgments or answers are correct; hidden tests, exact-answer checks, and reference verification retain their existing roles.
+Two base model checkpoints are selected. The main agent and solver both start from Qwen3-8B, but the solver must retain its original frozen parameters and must never receive the main agent's trained LoRA adapters. The similarity judge and offline auditor can share one self-hosted Qwen3-32B service, with separate requests, prompts, and contexts. The offline auditor must not pass reference answers to online agents. Using the same model for several roles does not provide independent evidence that its judgments or answers are correct; hidden tests, exact-answer checks, and reference verification retain their existing roles.
 
 The selected model IDs and offline-auditor settings are recorded in configs/experiment.json. Revisions, thinking modes, sampling settings, service endpoints, and GPU allocation remain unresolved. No new quantization, decoding mode, or resource allocation is assumed. Qwen3 requires Transformers 4.51.0 or later, reflected in the training dependency minimum; final dependency versions remain to be pinned. Deployment can use a [self-hosted vLLM endpoint](https://qwen.readthedocs.io/en/latest/deployment/vllm.html), but real model and execution adapters are not yet implemented.
 
