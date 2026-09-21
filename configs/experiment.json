@@ -1,8 +1,10 @@
 {
   "schema_version": 1,
+  "model_access": "self_hosted_open_weights",
   "main_agent": {
-    "model_id_or_path": null,
+    "model_id_or_path": "Qwen/Qwen3-8B",
     "revision": null,
+    "enable_thinking": null,
     "output_format": "jsonl_select_create_finish",
     "trainable_tokens": "all_main_agent_output_tokens",
     "observes": [
@@ -24,8 +26,9 @@
     "execution_host": null
   },
   "solver": {
-    "model": null,
+    "model": "Qwen/Qwen3-32B",
     "revision": null,
+    "enable_thinking": null,
     "endpoint_config_path": null,
     "credentials_environment_variable": null,
     "temperature": null,
@@ -36,8 +39,9 @@
     "noncompliance_additional_penalty": false
   },
   "similarity_judge": {
-    "model": null,
+    "model": "Qwen/Qwen3-32B",
     "revision": null,
+    "enable_thinking": null,
     "endpoint_config_path": null,
     "credentials_environment_variable": null,
     "temperature": null,
@@ -106,6 +110,15 @@
     "code_source_policy": "synthetic four-operation integer program repair; held-out compositions",
     "life_source_policy": "synthetic closed-world 16-place maps; held-out scenes",
     "separate_answers_and_hidden_tests": true,
+    "reference_auditor": {
+      "model": "Qwen/Qwen3-32B",
+      "revision": null,
+      "endpoint_config_path": null,
+      "credentials_environment_variable": null,
+      "enable_thinking": null,
+      "temperature": null,
+      "max_output_tokens": null
+    },
     "math_reference_audit": null
   },
   "evaluation": {
